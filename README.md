@@ -18,7 +18,15 @@ You also need to know:
  - the Bluetooth ID of your SBrick (use 'hcitool -i hci0 lescan' or a BLE tool like Nordic nRF Master Control Panel on your mobile phone)
  - the file name [and path] of your .ota firmware file [I put mine at the same folder of the script]
 
-My first firmware file had 112640 bytes. It takes a while to transfer it to the SBrick, between 2 to 10 minutes depending on the DELAY value you use.
-When the transfer ends you need to check if the SBrick did received all that bytes. Have not yet found a way but that is not critical.
-Then you need to send a "Reboot into DFU mode". My script doesn't do that yet. You can use a mobile tool like the Nordic nRF Master Control Panel to write "3" or "0x03" at "OTA control - f7bf3564-fb6d-4e53-88a4-5e37e0326063" characteristic. The Sbrick will reboot, check the firmware integrity and if OK it applies it. If not OK, lets try again with slower speeds (I've achieved it at first try).
+The 4.2 firmware file has ~110 kB. It takes 70~75 seconds to transfer it to the SBrick, depending on the DELAY value you use.
+When the transfer ends the script checks if the SBrick did received all that bytes. If OK, it issues a "Reboot into DFU mode". If not OK, it issues an ordinary reboot but only if the SBrick is already running firmware 4.2 because the original firmware (4.0) can't.  
+
+You can use a mobile tool like the Nordic nRF Master Control Panel to confirm that the update succeeded, just read UUID 0x2a26	(Firmware Revision String).
+
+Please note that after a firmware upgrade things may change - from 4.0 to 4.2 most handles changed and I had to remap my control scripts to the new handles. This script knows 4.0 and 4.2 handles but if you upgrade to a more recent firmware (let's say 4.6) it might became totally useless after that.
+
+You can find the handles for each UUID characteristic with the gatttool:
+
+$ gatttool --device XX:XX:XX:XX:XX:XX --adapter=hciX --characteristics
+
 
