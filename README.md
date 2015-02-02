@@ -19,13 +19,13 @@ You need a Bluetooth adapter that talks BLE (any BT 4.0 should do, I mostly use 
 This utility needs 4 parameters:
  sbupgrade.py -a 'adapter' -d 'device' -f 'firmware file' -t 'delay'
  
- 'adapter' is the HCI ID of your BT adapter (usualy hci0 if you just have one but use 'hciconfig -a' to check)
+ - 'adapter' is the HCI ID of your BT adapter (usualy hci0 if you just have one but use 'hciconfig -a' to check)
  
- 'device' is the Bluetooth ID (Address) of your SBrick (use 'hcitool -i hci0 lescan' or a BLE tool like Nordic nRF Master Control Panel on your mobile phone)
+ - 'device' is the Bluetooth ID (Address) of your SBrick (use 'hcitool -i hci0 lescan' or a BLE tool like Nordic nRF Master Control Panel on your mobile phone)
  
- 'firmware file' is the file name [and paht] of the OTA firmware you got from Vengit (I usually put mine at the same folder of the script)
+ - 'firmware file' is the file name [and paht] of the OTA firmware you got from Vengit (I usually put mine at the same folder of the script)
  
- 'delay' is the ammount in milliseconds to wait between each 20-byte block transfer. I use 8, it takes 70~75 seconds to transfer the 4.2 firmware file (~110 kB).
+ - 'delay' is the ammount in milliseconds to wait between each 20-byte block transfer. I use 8, it takes 70~75 seconds to transfer the 4.2 firmware file (~110 kB).
 
 Some validations are made, although the script is not bullet-proof. Before the transfer process starts you are prompted with the options you choose and the SBrick hardware and fimrware versions. You may choose to proceed or not.
 
