@@ -8,10 +8,10 @@ I'm just an amateur programmer so be carefull if you choose to use my code.
 
 This works only in linux because it uses the gatttool command to talk with Bluetooth Low Energy devices.
 Recent linux Bluetooth stack (BlueZ) is needed, at least version 5.
-I've been using gatttool with
- Ubuntu 14.04 and 14.10 on my laptop
- ev3dev (jessie-based) on LEGO Mindstorms EV3
- Raspbian (attention: also jessie-based, not the default) on Raspberry Pi
+I've been using gatttool with:
+- Ubuntu 14.04 and 14.10 on my laptop
+- ev3dev (jessie-based) on LEGO Mindstorms EV3
+- Raspbian (attention: also jessie-based, not the default) on Raspberry Pi
  
 You need a Bluetooth adapter that talks BLE (any BT 4.0 should do, I mostly use a generic "Targus" USB dongle,
   lsusb says: 0a5c:21e8 Broadcom Corp. BCM20702A0 Bluetooth 4.0)
