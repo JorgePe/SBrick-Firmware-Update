@@ -23,11 +23,11 @@ This utility needs 4 parameters:
  
  - 'device' is the Bluetooth ID (Address) of your SBrick (use 'hcitool -i hci0 lescan' or a BLE tool like Nordic nRF Master Control Panel on your mobile phone)
  
- - 'firmware file' is the file name [and paht] of the OTA firmware you got from Vengit (I usually put mine at the same folder of the script)
+ - 'firmware file' is the file name [and path] of the OTA firmware you got from Vengit (I usually put mine at the same folder of the script)
  
  - 'delay' is the ammount in milliseconds to wait between each 20-byte block transfer. I use 8, it takes 70~75 seconds to transfer the 4.2 firmware file (~110 kB).
 
-Some validations are made, although the script is not bullet-proof. Before the transfer process starts you are prompted with the options you choose and the SBrick hardware and fimrware versions. You may choose to proceed or not.
+Some validations are made, altough the script is not bullet-proof. Before the transfer process starts you are prompted with the options you choose and the SBrick hardware and fimrware versions. You may choose to proceed or not.
 
 When the transfer ends the script checks if the SBrick did received all that bytes. If OK, it issues a "Reboot into DFU mode". If not OK, it issues an ordinary reboot but only if the SBrick is already running firmware 4.2 because the original firmware can't - with the 4.0 you need to do it manually by removing power.
 
