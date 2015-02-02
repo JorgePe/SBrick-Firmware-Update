@@ -1,0 +1,9 @@
+02-Feb-2015
+  upgrade.py replaced by sbupgrade.py
+  cleaner code
+  command line parameters - no need to edit the script anymore
+  some in-program validations
+  
+Jan-2015
+  upgrade.py
+  intial version of SBrick firmware upgrade utility
